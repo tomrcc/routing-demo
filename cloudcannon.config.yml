@@ -133,9 +133,7 @@ collections_config:
       - routing.json
     icon: alt_route
     disable_url: true
-    include_developer_files: true
-    description: ''
-    _enabled_editors:
+    include_developer_files: false
     _inputs:
       from:
         type: text
