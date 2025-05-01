@@ -84,9 +84,33 @@ collections_config:
     disable_add_folder: true
     glob: 
       - '!icons.json'
+      - '!http-status-codes.json'
     _inputs:
       icons:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free). Then add it to the ```src/components/utility/icon.jsx``` file, following the existing pattern.
+  routing:
+    path: .cloudcannon
+    icon: alt_route
+    glob: 
+      - routing.json
+    disable_url: true
+    disable_file_actions: true
+    disable_add: true
+    _inputs:
+      from:
+        comment: The url pattern that triggers this redirect.
+        type: text
+      to:
+        comment: Where the redirect goes to.
+        type: text
+      status:
+        type: select
+        options:
+          values: data.http_codes
+          value_key: code
+          preview:
+            text:
+              - key: definition
 
 collection_groups:
   - heading: Pages
@@ -96,6 +120,7 @@ collection_groups:
   - heading: Data
     collections:
       - data
+      - routing
 
 data_config:
   icons:
@@ -104,6 +129,8 @@ data_config:
     path: data/colors.json
   tags:
     path: data/tags.json
+  http_codes:
+    path: data/http-status-codes.json
 
 file_config:
   - glob: data/colors.json

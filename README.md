@@ -1,14 +1,7 @@
-# Astro CloudCannon Starter
+# Routing Demo
 
-A starting point for developers looking to build a website with Astro, using Bookshop components in CloudCannon.
-
-Create your own copy, and start creating your own components to use in the CloudCannon CMS. Build components using `.jsx` or `.astro` files.
-
-To try to cut down on setup time this starter template includes some commonly used [features](#features) in CloudCannon.
-
-This template is aimed at helping developers build sites quickly, rather than providing editors with a fully built editable site. If you are an editor looking for an already built template, have a look at [CloudCannon's templates page](https://cloudcannon.com/templates/).
-
-[See a demo version of this site](https://tiny-jackal.cloudvent.net/).
+Add the routing.json file to a collection in CloudCannon to enable management of routes in app.
+[Docs](https://cloudcannon.com/documentation/articles/configure-custom-routing/)
 
 ## Getting Started
 
@@ -42,7 +35,7 @@ Build custom components that non-technical editors can use in a page building ex
 
 Bookshop is already set up on this project, so that you can start building components straight away.
 
-To add a new component run `npm run your-new-component` in the root of your repository.
+To add a new component run `npm run new-component <your-new-component>` in the root of your repository.
 
 ### Blog & Documentation Pages
 
