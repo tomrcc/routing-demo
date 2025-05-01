@@ -133,26 +133,102 @@ collections_config:
       - routing.json
     icon: alt_route
     disable_url: true
-    include_developer_files: false
+    include_developer_files: true
     _inputs:
-      from:
-        type: text
-        comment: The url pattern that triggers this redirect.
-        cascade: true
-      to:
-        type: text
-        comment: Where the redirect goes to.
-        cascade: true
-      status:
-        type: select
+      routes:
+        type: array
         options:
-          allow_empty: true
-          values: data.http_codes
-          value_key: code
-          preview:
-            text:
-              - key: definition
-        cascade: true
+          structures: _structures.redirect
+      headers:
+        type: array
+        comment: Custom HTTP headers allow you to pass more information between your web server and the visitor's browser every time someone loads a web page. Custom headers are often used to change some website behavior, meet security requirements, or allow other origins to load resources.
+        options:
+          structures: _structures.header
+    _structures:
+      header:
+        values:
+          - value:
+              match: 
+              headers:
+            preview:
+              icon: info
+            _inputs:
+              match:
+                type: text
+                comment: The value of the match object should be a REGEX string of all URLs to which you want to add a header.
+              headers:
+                type: array
+                comment: Add an entry for each custom header. Each entry in the array should a header name and a header value.
+                options:
+                  structures: _structures.headerheader
+            _structures:
+              headerheader:
+                values:
+                  - label: Header
+                    value:
+                      name:
+                      value:
+                    _inputs:
+                      name:
+                        label: Header Name
+                        type: text
+                      value:
+                        label: Header Value
+                        type: text
+      redirect:
+        values:
+          - label: Group of pages
+            value:
+              from:
+              to:
+              status:
+            preview:
+              icon: merge
+            _inputs:
+              from:
+                type: text
+                comment: The url pattern that triggers this redirect.
+                cascade: true
+              to:
+                type: text
+                comment: Where the redirect goes to.
+                cascade: true
+              status:
+                type: select
+                options:
+                  allow_empty: true
+                  values: data.http_codes
+                  value_key: code
+                  preview:
+                    text:
+                      - key: definition
+                cascade: true
+          - label: Single page
+            value:
+              from:
+              to:
+              status:
+            preview:
+              icon: turn_slight_right
+            _inputs:
+              from:
+                type: url
+                comment: The url that triggers this redirect.
+                cascade: true
+              to:
+                type: url
+                comment: Where the redirect goes to.
+                cascade: true
+              status:
+                type: select
+                options:
+                  allow_empty: true
+                  values: data.http_codes
+                  value_key: code
+                  preview:
+                    text:
+                      - key: definition
+                cascade: true
     disable_add: true
     disable_add_folder: false
     disable_file_actions: false

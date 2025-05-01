@@ -15,5 +15,24 @@
       "to": "/app/",
       "status": 200
     }
+  ],
+  "headers": [
+    {
+      "match": "*",
+      "headers": [
+        {
+          "name": "Access-Control-Allow-Origin",
+          "value": "https://example.com"
+        },
+        {
+          "name": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "name": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
