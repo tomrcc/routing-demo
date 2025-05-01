@@ -1,4 +1,3 @@
-_schema: _schema
 paths:
   uploads: public/images
   static: public
@@ -137,6 +136,7 @@ collections_config:
     _inputs:
       routes:
         type: array
+        comment: An instruction to redirect a visitor from one URL to another. See [more info](https://cloudcannon.com/documentation/articles/configure-custom-routing/#custom-routes).
         options:
           structures: _structures.redirect
       headers:
@@ -168,6 +168,8 @@ collections_config:
                     value:
                       name:
                       value:
+                    preview:
+                      icon: info
                     _inputs:
                       name:
                         label: Header Name
