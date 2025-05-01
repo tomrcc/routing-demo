@@ -89,10 +89,10 @@ collections_config:
       icons:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free). Then add it to the ```src/components/utility/icon.jsx``` file, following the existing pattern.
   routing:
-    path: .cloudcannon
+    path: '.cloudcannon'
     icon: alt_route
     glob: 
-      - routing.json
+      - 'routing.json'
     disable_url: true
     disable_file_actions: true
     disable_add: true
