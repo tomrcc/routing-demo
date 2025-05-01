@@ -89,11 +89,12 @@ collections_config:
       icons:
         comment: Add an icon from the list of [Font Awesome icons](https://fontawesome.com/search?o=r&m=free). Then add it to the ```src/components/utility/icon.jsx``` file, following the existing pattern.
   routing:
-    path: '.cloudcannon/routing.json'
-    icon: alt_route
+    path: '.cloudcannon'
     disable_url: true
-    disable_file_actions: true
     disable_add: true
+    icon: alt_route
+    glob: 
+      - 'routing.json'
     _inputs:
       from:
         comment: The url pattern that triggers this redirect.
