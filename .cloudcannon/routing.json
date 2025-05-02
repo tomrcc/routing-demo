@@ -6,8 +6,8 @@
       "status": 302
     },
     {
-      "from": "/documentation/articles/choosing-your-ssg/",
-      "to": "/documentation/articles/select-your-ssg/",
+      "from": "/blog/all-the-bells-and-whistles/",
+      "to": "/blog/email-delivery-tips/",
       "status": 301
     },
     {
