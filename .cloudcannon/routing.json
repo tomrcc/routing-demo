@@ -1,7 +1,6 @@
 {
   "routes": [
     {
-      "_type": "group",
       "from": "/blog/all-the-bells-and-whistles*",
       "to": "/blog/email-delivery-tips/",
       "status": 301
