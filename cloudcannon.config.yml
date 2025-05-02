@@ -133,6 +133,9 @@ collections_config:
     icon: alt_route
     disable_url: true
     include_developer_files: true
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: false
     _inputs:
       routes:
         type: array
@@ -144,6 +147,24 @@ collections_config:
         comment: Custom HTTP headers allow you to pass more information between your web server and the visitor's browser every time someone loads a web page. Custom headers are often used to change some website behavior, meet security requirements, or allow other origins to load resources.
         options:
           structures: _structures.header
+      status:
+        type: number
+        comment: Set an http code to use.
+        context:
+          open: false
+          content: |
+            CloudCannon supports the following redirect codes:
+              
+              - 301 — Indicates the requested URL has been changed permanently.
+              - 302 — Indicates the requested URL has been changed temporarily, and the visitor's browser should continue to use the original URL in future requests.
+              - 307 — Indicates the requested URL has been changed temporarily and the visitor's browser should continue to use the original URL in future requests. This is similar to a 302 code however it does not allow the HTTP method to change.
+              - 308 — Indicates the requested URL has been changed permanently. This is similar to a 301 code however it does not allow the HTTP method to change.
+            
+            CloudCannon supports the following proxy codes:
+              
+              - 200 — Indicates the request was successful.
+              - 404 — Indicates the requested URL could not be found.
+              - 410 — Indicates the requested URL has been permanently deleted, and search engines should de-index this page.
     _structures:
       header:
         values:
@@ -195,24 +216,6 @@ collections_config:
                 type: text
                 comment: Where the redirect goes to.
                 cascade: false
-              status:
-                type: number
-                comment: Set an http code to use.
-                context:
-                  open: false
-                  content: |
-                    CloudCannon supports the following redirect codes:
-                      
-                      - 301 — Indicates the requested URL has been changed permanently.
-                      - 302 — Indicates the requested URL has been changed temporarily, and the visitor's browser should continue to use the original URL in future requests.
-                      - 307 — Indicates the requested URL has been changed temporarily and the visitor's browser should continue to use the original URL in future requests. This is similar to a 302 code however it does not allow the HTTP method to change.
-                      - 308 — Indicates the requested URL has been changed permanently. This is similar to a 301 code however it does not allow the HTTP method to change.
-                    
-                    CloudCannon supports the following proxy codes:
-                      
-                      - 200 — Indicates the request was successful.
-                      - 404 — Indicates the requested URL could not be found.
-                      - 410 — Indicates the requested URL has been permanently deleted, and search engines should de-index this page.
           - label: Single page
             value:
               from:
@@ -229,19 +232,7 @@ collections_config:
                 type: url
                 comment: Where the redirect goes to.
                 cascade: false
-              status:
-                type: select
-                options:
-                  allow_empty: true
-                  values: data.http_codes
-                  value_key: code
-                  preview:
-                    text:
-                      - key: definition
-                cascade: false
-    disable_add: true
-    disable_add_folder: false
-    disable_file_actions: false
+
 collection_groups:
   - heading: Pages
     collections:
