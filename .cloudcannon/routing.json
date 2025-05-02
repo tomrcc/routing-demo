@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "from": "/blog/all-the-bells-and-whistles/",
+      "from": "/blog/all-the-bells-and-whistles*",
       "to": "/blog/email-delivery-tips/",
       "status": 301
     }
