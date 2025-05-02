@@ -190,11 +190,11 @@ collections_config:
               from:
                 type: text
                 comment: The url pattern that triggers this redirect.
-                cascade: true
+                cascade: false
               to:
                 type: text
                 comment: Where the redirect goes to.
-                cascade: true
+                cascade: false
               status:
                 type: number
                 comment: Set an http code to use.
@@ -238,7 +238,7 @@ collections_config:
                   preview:
                     text:
                       - key: definition
-                cascade: true
+                cascade: false
     disable_add: true
     disable_add_folder: false
     disable_file_actions: false
@@ -251,6 +251,7 @@ collection_groups:
     collections:
       - data
       - routing
+
 _inputs:
   content_blocks:
     type: array
