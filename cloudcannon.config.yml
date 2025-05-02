@@ -198,19 +198,21 @@ collections_config:
               status:
                 type: number
                 comment: Set an http code to use.
-                context: >-
-                  CloudCannon supports the following redirect codes:
+                context:
+                  open: false
+                  content: |
+                    CloudCannon supports the following redirect codes:
+                      
+                      - 301 — Indicates the requested URL has been changed permanently.
+                      - 302 — Indicates the requested URL has been changed temporarily, and the visitor's browser should continue to use the original URL in future requests.
+                      - 307 — Indicates the requested URL has been changed temporarily and the visitor's browser should continue to use the original URL in future requests. This is similar to a 302 code however it does not allow the HTTP method to change.
+                      - 308 — Indicates the requested URL has been changed permanently. This is similar to a 301 code however it does not allow the HTTP method to change.
                     
-                    - 301 — Indicates the requested URL has been changed permanently.
-                    - 302 — Indicates the requested URL has been changed temporarily, and the visitor's browser should continue to use the original URL in future requests.
-                    - 307 — Indicates the requested URL has been changed temporarily and the visitor's browser should continue to use the original URL in future requests. This is similar to a 302 code however it does not allow the HTTP method to change.
-                    - 308 — Indicates the requested URL has been changed permanently. This is similar to a 301 code however it does not allow the HTTP method to change.
-                  
-                  CloudCannon supports the following proxy codes:
-                    
-                    - 200 — Indicates the request was successful.
-                    - 404 — Indicates the requested URL could not be found.
-                    - 410 — Indicates the requested URL has been permanently deleted, and search engines should de-index this page.
+                    CloudCannon supports the following proxy codes:
+                      
+                      - 200 — Indicates the request was successful.
+                      - 404 — Indicates the requested URL could not be found.
+                      - 410 — Indicates the requested URL has been permanently deleted, and search engines should de-index this page.
           - label: Single page
             value:
               from:
