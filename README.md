@@ -1,7 +1,15 @@
 # Routing Demo
 
 Add the routing.json file to a collection in CloudCannon to enable management of routes in app.
-[Docs](https://cloudcannon.com/documentation/articles/configure-custom-routing/)
+
+
+Places to look:
+  - cloudcannon.config.yaml (routing collection)
+  
+  - .cloudcannon/routing.json
+
+
+[CloudCannon routing documentation](https://cloudcannon.com/documentation/articles/configure-custom-routing/)
 
 ## Getting Started
 
