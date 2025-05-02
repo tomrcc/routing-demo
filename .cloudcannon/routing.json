@@ -1,19 +1,9 @@
 {
   "routes": [
     {
-      "from": "/cloudcannon/(.*)",
-      "to": "https://cloudcannon.com/$1",
-      "status": 302
-    },
-    {
       "from": "/blog/all-the-bells-and-whistles/",
       "to": "/blog/email-delivery-tips/",
       "status": 301
-    },
-    {
-      "from": "/app/(.*)",
-      "to": "/app/",
-      "status": 200
     }
   ],
   "headers": [
