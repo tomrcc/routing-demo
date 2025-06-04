@@ -1,13 +1,14 @@
 # Routing Demo
 
-Add the routing.json file to a collection in CloudCannon to enable management of routes in app.
+Shows how to make the routing.json file editable in CloudCannon.
 
-
-Places to look:
-  - cloudcannon.config.yaml (routing collection)
-  
+Places of interest:
+  - cloudcannon.config.yaml (`collections_config` > `routing` & `collection_groups`)
   - .cloudcannon/routing.json
 
+- The routing.json file that controls routing on a CloudCannon site must live at `.cloudcannon/routing.json` (although if you need it in a different spot, you can move it to where it needs to be in a `preinstall` or `prebuild`
+- Must be a CloudCannon hosted site for the `.cloudcannon/routing.json` to affect routing, although you could similarly make a different hosting provider's routing data file editable in CloudCannon. Simply define it as a collection, and add it to your collection groups (if defined at all) to see it appear in your sidebar, and therefore be accessible to editors.
+- Control input config for these files just like anywhere else in CloudCannon to define the editing experience needed for each use case.
 
 [CloudCannon routing documentation](https://cloudcannon.com/documentation/articles/configure-custom-routing/)
 
